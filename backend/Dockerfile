@@ -1,10 +1,10 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
-COPY req.txt req.txt
+COPY py_deps.txt py_deps.txt
 
-RUN pip install -r req.txt
+RUN pip install -r py_deps.txt
 
 COPY main.py .
 

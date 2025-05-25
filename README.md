@@ -1,7 +1,9 @@
-## Видео
-https://youtu.be/LyocQr7cN-0
+## Test Backend load Testing
 
-## Нагрузочное тестирование с ab:
+
+## Load test with Apache Bench (ab):
+
+Install: https://www.apachelounge.com/download/#google_vignette
 
 ```
 ab -k -c 5 -n 20000 'http://localhost:8080/' & \
@@ -12,5 +14,9 @@ ab -k -c 50 -n 5000 'http://localhost:8080/status/200?seconds_sleep=1' & \
 ab -k -c 50 -n 2000 'http://localhost:8080/status/200?seconds_sleep=2'
 ```
 
-## Пример дашборда
-Находится в папке /grafana/example-dashboard.json
+.\ab.exe -k -c 5 -n 20000 'http://localhost:8080/' ; \
+.\ab.exe -k -c 5 -n 2000 'http://localhost:8080/status/400' ; \
+.\ab.exe -k -c 5 -n 3000 'http://localhost:8080/status/409' ; \
+.\ab.exe -k -c 5 -n 5000 'http://localhost:8080/status/500' ; \
+.\ab.exe -k -c 50 -n 5000 'http://localhost:8080/status/200?seconds_sleep=1' ; \
+.\ab.exe -k -c 50 -n 2000 'http://localhost:8080/status/200?seconds_sleep=2'

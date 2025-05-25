@@ -675,8 +675,8 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "Backend Обзервабилити",
-    "uid": "fastapi-observability",
+    "title": "Litestar Observability Dashboard",
+    "uid": "litestar-observability",
     "version": 9,
     "weekStart": ""
   }
