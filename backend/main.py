@@ -29,7 +29,7 @@ async def return_status(
     if seconds_sleep:
         await asyncio.sleep(seconds_sleep)
     if status_code and status_code != 200:
-        logger.error("Shit happens")
+        logger.error("Uh Oh!")
         raise HTTPException(detail="an error occurred", status_code=status_code)
     return {"data": "Hello"}
 
@@ -39,8 +39,8 @@ app = Litestar(
     route_handlers=[root, return_status, PrometheusController],
     middleware=[prometheus_config.middleware],
     openapi_config=OpenAPIConfig(
-        title="Тестовый Бэкенд",
-        description="Пример OpenAPI документации",
+        title="Test Backend",
+        description="OpenAPI Documentation Example",
         version="0.0.1",
         render_plugins=[ScalarRenderPlugin()],
         path="/docs",
